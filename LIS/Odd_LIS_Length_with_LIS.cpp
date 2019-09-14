@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    int t, n, lis=0;
+    int t, n, lis=1;
     cin>>t;
     for(int k=1; k<=t; k++){
         cin>>n;
@@ -22,16 +22,14 @@ int main(){
 
         cout<<"LIS Length is :"<<lis<<"\n";
 
-        if(lis>0){
-            for(int i=n-1; i>=0; i--)
-            if(LIS[i]==lis) {v.push_back(ar[i]); lis--;}
-            reverse(v.begin(),v.end());
-            cout<<"LIS is :";
-            for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
-            cout<<endl;
-        }
+        for(int i=n-1; i>=0; i--)
+        if(LIS[i]==lis) {v.push_back(ar[i]); lis--;}
+        reverse(v.begin(),v.end());
+        cout<<"LIS is :";
+        for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
+        cout<<endl;
 
-        lis=0;
+        lis=1;
     }
 
 }
