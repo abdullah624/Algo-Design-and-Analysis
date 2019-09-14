@@ -23,11 +23,12 @@ int main(){
         cout<<"LIS Length is :"<<lis<<"\n";
 
         for(int i=n-1; i>=0; i--)
-        if(LIS[i]==lis) {v.push_back(ar[i]); lis--;}
+        if(LIS[i]==lis && ar[i]%2==1) {v.push_back(ar[i]); lis--;}
         reverse(v.begin(),v.end());
         cout<<"LIS is :";
         for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
         cout<<endl;
+
 
         lis=1;
     }
