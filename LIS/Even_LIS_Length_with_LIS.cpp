@@ -16,14 +16,14 @@ int main(){
         for(int i=1; i<n; i++){
 
             for(int j=0; j<i; j++){
-                if(ar[i]>ar[j] && LIS[j]+1>LIS[i] && ar[i]%2==1 && ar[j]%2==1) {LIS[i]=LIS[j]+1; if(LIS[i]>lis) lis=LIS[i];}
+                if(ar[i]>ar[j] && LIS[j]+1>LIS[i] && ar[i]%2==0 && ar[j]%2==0) {LIS[i]=LIS[j]+1; if(LIS[i]>lis) lis=LIS[i];}
             }
         }
 
         cout<<"LIS Length is :"<<lis<<"\n";
 
         for(int i=n-1; i>=0; i--)
-        if(LIS[i]==lis && ar[i]%2==1) {v.push_back(ar[i]); lis--;}
+        if(LIS[i]==lis && ar[i]%2==0) {v.push_back(ar[i]); lis--;}
         reverse(v.begin(),v.end());
         cout<<"LIS is :";
         for(int i=0; i<v.size(); i++) cout<<v[i]<<" ";
